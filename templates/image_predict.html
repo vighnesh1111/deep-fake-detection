@@ -1,0 +1,25 @@
+<!-- image_predict.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Prediction Results</title>
+</head>
+<body>
+    <h1>Image Prediction Results</h1>
+    
+    {% if preprocessed_image %}
+        <img src="{{ preprocessed_image }}" alt="Preprocessed Image">
+    {% else %}
+        <p>No preprocessed image available.</p>
+    {% endif %}
+    
+    {% if output is not None %}
+        <p>Prediction: {{ output }}</p>
+        <p>Confidence: {{ confidence }}%</p>
+    {% else %}
+        <p>No prediction available.</p>
+    {% endif %}
+</body>
+</html>
